@@ -1,5 +1,7 @@
 # Ansible Role: Dotfiles
 
+[![Build status][ci-badge]][ci-url]
+
 Simple yet elegant ansible role to install a set of dotfiles from a git repository.
 
 ## Requirements
@@ -27,3 +29,6 @@ None
   roles:
     - role: vandycknick.dotfiles
 ```
+
+[ci-url]: https://github.com/vandycknick/ansible-role-dotfiles
+[ci-badge]: https://github.com/vandycknick/ansible-role-dotfiles/workflows/CI/badge.svg
