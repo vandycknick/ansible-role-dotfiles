@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- Parameter to pass custom options to rsync
+- Exclude .git, README.md and LICENSE by default from rsync
+- Added parameter to add extra excludes to rsync (see rsync --help or man rsync)
+
 ## [1.0.0] - 2021-12-21
 
 Initial release.

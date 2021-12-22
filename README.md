@@ -12,10 +12,12 @@ Requires `git` to be installed on the managed machine.
 
 | Name                            | Description                                                                                   | Default                                     | Required |
 | ------------------------------- | --------------------------------------------------------------------------------------------- | ------------------------------------------- | -------- |
-| dotfiles_repo                   | Dotfiles git repository                                                                       | https://github.com/vandycknick/dotfiles.git | no       |
-| dotfiles_repo_version           | Tag or branch name to checkout                                                                | main                                        | no       |
+| dotfiles_repo                   | Dotfiles git repository.                                                                      | https://github.com/vandycknick/dotfiles.git | no       |
+| dotfiles_repo_version           | Tag or branch name to checkout.                                                               | main                                        | no       |
 | dotfiles_repo_accept_hostkey    | If yes, ensure that "-o StrictHostKeyChecking=no" is present as an ssh option.                | false                                       | no       |
-| dotfiles_repo_local_destination | The path of were the dotfiles repository should be checked out                                | ~/Projects/dotfiles                         | no       |
+| dotfiles_repo_local_destination | The path of were the dotfiles repository should be checked out.                               | ~/Projects/dotfiles                         | no       |
+| dotfiles_rsync_opts             | Pass extra options to rsync.                                                                  | --no-motd                                   | no       |
+| dotfiles_excludes               | Exclude files matching the given pattern (.git,README.md,LICENSE are excluded by default).    | []                                          | no       |
 | dotfiles_home                   | The path where dotfiles will be synced to, this most likely will be the users home directory. | ~                                           | no       |
 
 ## Dependencies

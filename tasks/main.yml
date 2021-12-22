@@ -6,8 +6,15 @@
     accept_hostkey: "{{ dotfiles_repo_accept_hostkey }}"
   become: false
 
+- name: Prepare excludes list
+  set_fact:
+    excludes: "{{ excludes | default([]) + ['--exclude=' ~ item] }}"
+  loop: "{{ dotfiles_exclude_defaults + dotfiles_excludes }}"
+
 - name: Sync dotfiles
   ansible.posix.synchronize:
     src: "{{ dotfiles_repo_local_destination }}/"
     dest: "{{ dotfiles_home }}"
+    recursive: yes
+    rsync_opts: "{{ dotfiles_rsync_opts + excludes }}"
   become: false
