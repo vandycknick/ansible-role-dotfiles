@@ -15,6 +15,11 @@
   ansible.posix.synchronize:
     src: "{{ dotfiles_repo_local_destination }}/"
     dest: "{{ dotfiles_home }}"
-    recursive: yes
+    recursive: true
     rsync_opts: "{{ dotfiles_rsync_opts + excludes }}"
   become: false
+
+- name: Setup shell cache directory
+  file:
+    path: "{{ ansible_env.HOME }}/.cache/shell"
+    state: directory
