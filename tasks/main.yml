@@ -1,3 +1,9 @@
+- name: Install dependencies
+  apt:
+    name: rsync
+    state: present
+  become: true
+
 - name: Clone dotfiles repo locally.
   git:
     repo: "{{ dotfiles_repo }}"
