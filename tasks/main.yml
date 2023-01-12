@@ -22,6 +22,7 @@
     src: "{{ dotfiles_repo_local_destination }}/"
     dest: "{{ dotfiles_home }}"
     recursive: true
+    checksum: true
     rsync_opts: "{{ dotfiles_rsync_opts + excludes }}"
   become: false
 
