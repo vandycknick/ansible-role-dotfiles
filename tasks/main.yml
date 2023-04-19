@@ -5,6 +5,7 @@
   become: true
 
 - name: Clone dotfiles repo locally.
+  delegate_to: 127.0.0.1
   git:
     repo: "{{ dotfiles_repo }}"
     dest: "{{ dotfiles_repo_local_destination }}"
