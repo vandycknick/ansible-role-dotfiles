@@ -3,6 +3,7 @@
     name: rsync
     state: present
   become: true
+  when: ansible_os_family == "Debian"
 
 - name: Clone dotfiles repo locally.
   delegate_to: 127.0.0.1
